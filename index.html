@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEZY TATTOO &amp; Piercing | San Sebastián de los Reyes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#141414;
+    --violet:#8b5cf6;
+    --dark:#0d0d0d;
+    --cream:#f5f3fa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:#fff;color:var(--black);line-height:1.65;}
+  h1,h2{font-family:'Space Grotesk',sans-serif;font-weight:700;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 14px rgba(139,92,246,.12);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1140px;margin:0 auto;}
+  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;text-transform:uppercase;letter-spacing:.02em;}
+  .logo span{color:var(--violet);}
+  nav ul{list-style:none;display:flex;gap:26px;}
+  nav ul a{font-size:.9rem;font-weight:600;color:var(--black);}
+  nav ul a:hover{color:var(--violet);}
+  .nav-cta{background:var(--black);color:#fff;padding:10px 20px;font-weight:700;font-size:.85rem;}
+
+  .hero{position:relative;min-height:82vh;display:flex;align-items:center;overflow:hidden;color:#fff;}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(13,13,13,.92) 30%,rgba(139,92,246,.4) 100%);}
+  .hero-content{position:relative;z-index:2;padding:60px 24px;max-width:1140px;margin:0 auto;width:100%;}
+  .hero-tag{display:inline-block;background:var(--violet);color:#fff;padding:7px 16px;font-size:.78rem;font-weight:700;margin-bottom:22px;text-transform:uppercase;}
+  .hero h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.1;margin-bottom:22px;}
+  .hero p{max-width:520px;font-size:1.05rem;opacity:.92;margin-bottom:30px;font-family:'Inter',sans-serif;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:15px 30px;font-weight:700;font-size:.85rem;transition:.2s;text-transform:uppercase;}
+  .btn-primary{background:var(--violet);color:#fff;}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-outline{border:2px solid #fff;color:#fff;}
+  .btn-outline:hover{background:#fff;color:var(--black);}
+
+  .stats{background:var(--dark);color:#fff;padding:34px 0;}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:20px;}
+  .stats b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.9rem;color:var(--violet);}
+  .stats span{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;opacity:.85;}
+
+  section{padding:90px 0;}
+  .section-tag{color:var(--violet);text-transform:uppercase;font-size:.78rem;letter-spacing:.12em;font-weight:700;margin-bottom:10px;display:block;}
+  .section-title{font-size:clamp(2rem,4vw,2.6rem);margin-bottom:16px;}
+  .section-desc{max-width:600px;color:#555;margin-bottom:50px;}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{background:var(--cream);padding:34px 28px;transition:.2s;border-left:4px solid var(--violet);}
+  .service-card:hover{transform:translateY(-6px);}
+  .service-card h3{font-size:1.1rem;margin-bottom:10px;font-weight:700;font-family:'Space Grotesk',sans-serif;}
+  .service-card p{color:#555;font-size:.94rem;}
+
+  .gallery{background:var(--dark);}
+  .gallery .section-tag{color:var(--violet);}
+  .gallery .section-title,.gallery .section-desc{color:#fff;}
+  .gallery .section-desc{color:#ccc;}
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .gallery-grid img{width:100%;height:400px;object-fit:cover;}
+
+  .why{background:#fff;}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+  .why-card{text-align:center;}
+  .why-badge{width:56px;height:56px;background:var(--black);color:var(--violet);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;}
+  .why-card h3{font-size:1rem;margin-bottom:8px;font-weight:700;font-family:'Space Grotesk',sans-serif;}
+  .why-card p{color:#555;font-size:.9rem;}
+
+  .steps{background:var(--cream);}
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .step{background:#fff;padding:28px 22px;border-top:3px solid var(--violet);}
+  .step-num{font-family:'Space Grotesk',sans-serif;color:var(--violet);font-weight:700;font-size:1.8rem;display:block;margin-bottom:10px;}
+  .step h3{font-size:.95rem;margin-bottom:8px;font-weight:700;font-family:'Space Grotesk',sans-serif;}
+  .step p{color:#555;font-size:.88rem;}
+
+  .testimonials{background:#fff;}
+  .reviews-tag{display:block;font-size:.75rem;color:#999;margin-bottom:40px;font-style:italic;}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .test-card{background:var(--cream);padding:30px;border-left:4px solid var(--violet);}
+  .stars{color:var(--violet);margin-bottom:12px;letter-spacing:2px;}
+  .test-card p{font-size:.95rem;color:#333;margin-bottom:18px;font-style:italic;}
+  .test-name{font-weight:700;font-size:.88rem;font-family:'Space Grotesk',sans-serif;}
+
+  .contact{background:var(--dark);color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
+  .contact .section-tag{color:var(--violet);}
+  .contact h2{color:#fff;}
+  .info-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+  .info-row b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--violet);margin-bottom:4px;}
+  .info-row span{color:#ddd;font-size:.95rem;}
+  .map-embed{overflow:hidden;height:100%;min-height:340px;}
+  .map-embed iframe{width:100%;height:100%;border:0;min-height:340px;filter:grayscale(30%);}
+
+  footer{background:#000;color:#888;padding:34px 0;text-align:center;font-size:.82rem;}
+  footer strong{color:#ccc;}
+
+  .wa-float{position:fixed;bottom:24px;right:24px;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:60;}
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+
+  @media(max-width:860px){
+    nav ul{display:none;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);}
+    .services-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .steps-grid{grid-template-columns:repeat(2,1fr);}
+    .test-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">TEZY <span>TATTOO</span></div>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Estudio</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="nav-cta" href="https://wa.me/34911929876?text=Hola!%20He%20visto%20vuestra%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20m%C3%A1s%20info" target="_blank">Reservar</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?q=80&w=1600&auto=format&fit=crop" alt="TEZY TATTOO estudio">
+  <div class="hero-content">
+    <span class="hero-tag">Sanse · Tatuajes &amp; Piercing</span>
+    <h1>Tu piel,<br>tu arte</h1>
+    <p>Tatuajes y piercing en San Sebastián de los Reyes, con higiene impecable y un equipo que cuida cada detalle de tu diseño.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/34911929876?text=Hola!%20Quiero%20reservar%20cita" target="_blank">Reservar cita</a>
+      <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div><b>4,9★</b><span>Valoración Google</span></div>
+    <div><b>193</b><span>Reseñas reales</span></div>
+    <div><b>100%</b><span>Higiene garantizada</span></div>
+    <div><b>Sanse</b><span>Fácil acceso</span></div>
+  </div>
+</div>
+
+<section id="servicios">
+  <div class="wrap">
+    <span class="section-tag">Qué hacemos</span>
+    <h2 class="section-title">Nuestros servicios</h2>
+    <p class="section-desc">Tatuajes personalizados y piercing profesional, con material esterilizado y máxima seguridad.</p>
+  </div>
+  <div class="wrap services-grid">
+    <div class="service-card"><h3>Tatuaje personalizado</h3><p>Diseños únicos adaptados a lo que quieras contar.</p></div>
+    <div class="service-card"><h3>Cover up</h3><p>Transformamos tatuajes antiguos en algo nuevo.</p></div>
+    <div class="service-card"><h3>Piercing</h3><p>Todo tipo de piercing con material de calidad.</p></div>
+    <div class="service-card"><h3>Retoques</h3><p>Mantenimiento y retoque de color y trazo.</p></div>
+    <div class="service-card"><h3>Diseño a medida</h3><p>Trabajamos contigo para crear tu boceto ideal.</p></div>
+    <div class="service-card"><h3>Asesoramiento</h3><p>Te guiamos en tamaño, zona y estilo.</p></div>
+  </div>
+</section>
+
+<section class="gallery" id="nosotros">
+  <div class="wrap">
+    <span class="section-tag">Nuestro estudio</span>
+    <h2 class="section-title">Arte con higiene y confianza</h2>
+    <p class="section-desc">Un estudio de referencia en Sanse, con cientos de clientes satisfechos.</p>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?q=80&w=1000&auto=format&fit=crop" alt="Tatuaje detalle">
+      <img src="https://images.unsplash.com/photo-1608666599953-b951163495f4?q=80&w=1000&auto=format&fit=crop" alt="Estudio de tatuajes">
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <span class="section-tag">Por qué elegirnos</span>
+    <h2 class="section-title">Lo que nos diferencia</h2>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-badge">✓</div><h3>Higiene total</h3><p>Material esterilizado y protocolos estrictos.</p></div>
+      <div class="why-card"><div class="why-badge">♥</div><h3>Trato cercano</h3><p>Te acompañamos en todo el proceso, sin prisas.</p></div>
+      <div class="why-card"><div class="why-badge">★</div><h3>Muy valorado</h3><p>4,9 sobre 5 en Google con 193 reseñas reales.</p></div>
+      <div class="why-card"><div class="why-badge">📍</div><h3>En Sanse</h3><p>Fácil acceso, sin desplazarte al centro de Madrid.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <span class="section-tag">Cómo reservar</span>
+    <h2 class="section-title">En 4 pasos</h2>
+    <div class="steps-grid">
+      <div class="step"><span class="step-num">01</span><h3>Escríbenos</h3><p>Cuéntanos tu idea o el piercing que quieres.</p></div>
+      <div class="step"><span class="step-num">02</span><h3>Diseño</h3><p>Preparamos el boceto contigo.</p></div>
+      <div class="step"><span class="step-num">03</span><h3>Reservamos cita</h3><p>Buscamos el día que te venga bien.</p></div>
+      <div class="step"><span class="step-num">04</span><h3>Sesión</h3><p>Disfrutas del resultado final.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="opiniones">
+  <div class="wrap">
+    <span class="section-tag">Opiniones</span>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <span class="reviews-tag">Reseñas de ejemplo · pendiente de reales</span>
+    <div class="test-grid">
+      <div class="test-card"><div class="stars">★★★★★</div><p>"Higiene impecable y un trabajo increíble, superó lo que esperaba."</p><div class="test-name">— Carlos M.</div></div>
+      <div class="test-card"><div class="stars">★★★★★</div><p>"Trato genial, me explicaron todo el proceso y el resultado brutal."</p><div class="test-name">— Sara P.</div></div>
+      <div class="test-card"><div class="stars">★★★★★</div><p>"El mejor estudio de la zona, repetiré seguro."</p><div class="test-name">— David L.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <span class="section-tag">Contacto</span>
+    <h2 class="section-title">Reserva tu cita</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="info-row"><span>📍</span><div><b>Dirección</b><span>Av. de Guadarrama, 4, San Sebastián de los Reyes, Madrid</span></div></div>
+        <div class="info-row"><span>📞</span><div><b>Teléfono / WhatsApp</b><span>911 92 98 76</span></div></div>
+        <div class="info-row"><span>⭐</span><div><b>Valoración</b><span>4,9 sobre 5 · 193 reseñas en Google</span></div></div>
+        <div class="info-row"><span>🕐</span><div><b>Horario</b><span>Consultar disponibilidad por WhatsApp</span></div></div>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=TEZY+TATTOO+Av+de+Guadarrama+4+San+Sebastian+de+los+Reyes&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Propuesta de diseño para <strong>TEZY TATTOO &amp; Piercing</strong> · demo, no es el sitio web oficial del negocio.</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/34911929876?text=Hola!%20He%20visto%20vuestra%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20m%C3%A1s%20info" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.7 0-3.3-.5-4.6-1.3l-.3-.2-3 .9.9-2.9-.2-.3C3.9 15 3.4 13.5 3.4 12c0-4.7 3.9-8.6 8.6-8.6s8.6 3.9 8.6 8.6-3.9 8.6-8.6 8.6zm4.7-6.4c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.4-1.8-.1-.2 0-.4.1-.5.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2-.1-.2-.2-.2-.5-.3z"/></svg>
+</a>
+
+</body>
+</html>
